@@ -1,0 +1,4 @@
+.delete-buttons button {
+    @apply text-xl bg-gray-200 text-black px-5 py-[6px] rounded-sm 
+    hover:bg-gray-300 active:transform active:scale-95
+}
