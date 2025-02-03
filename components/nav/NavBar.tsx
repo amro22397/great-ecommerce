@@ -8,7 +8,10 @@ import { getCurrentUser } from '@/actions/getCurrentUser'
 import { json } from 'stream/consumers'
 import Categories from './Categories'
 import SearchBar from '../SearchBar'
+import { Suspense } from 'react';
+
 import { getServerSession } from 'next-auth'
+import { Loader2 } from 'lucide-react'
 // import { authOptions } from '@/pages/api/auth/[...nextauth]'
 
 
@@ -66,7 +69,11 @@ const NavBar = async () => {
         </Container>
       </div>
 
+      <Suspense fallback={<Loader2 className='animate-spin'/>}>
       <Categories />
+    </Suspense>
+
+      
     </div>
   )
 }
